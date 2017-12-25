@@ -1,6 +1,6 @@
 {
     "name": "tuupola/callable-handler",
-    "description": "Compatibility layer between PSR-7 double pass and PSR-15 middlewares.",
+    "description": "Compatibility layer for PSR-7 double pass and PSR-15 middlewares.",
     "keywords": [
       "middleware",
       "psr-7",
