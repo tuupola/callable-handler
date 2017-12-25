@@ -15,11 +15,40 @@
 namespace Tuupola\Middleware;
 
 use PHPUnit\Framework\TestCase;
+use Tuupola\Http\Factory\ResponseFactory;
+use Tuupola\Http\Factory\ServerRequestFactory;
 
 class CallableHandlerTest extends TestCase
 {
     public function testShouldBeTrue()
     {
         $this->assertTrue(true);
+    }
+
+    public function testShouldCreate()
+    {
+        $handler = new CallableHandler(
+            function () {
+            },
+            (new ResponseFactory)->createResponse()
+        );
+        $this->assertInstanceOf(CallableHandler::class, $handler);
+    }
+
+    public function testShouldHandlePsr15()
+    {
+        $handler = new CallableHandler(
+            function ($request, $response, $next = null) {
+                $response->getBody()->write("deadbeef");
+                return $response;
+            },
+            (new ResponseFactory)->createResponse()
+        );
+
+        $request = (new ServerRequestFactory)
+            ->createServerRequest("GET", "https://example.com/api");
+
+        $response = $handler->handle($request);
+        $this->assertEquals("deadbeef", $response->getBody());
     }
 }
