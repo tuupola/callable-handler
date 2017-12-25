@@ -31,7 +31,6 @@ final class CallableHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $callable = $this->callable;
-        return $callable($request, $this->response);
+        return ($this->callable)($request, $this->response);
     }
 }
