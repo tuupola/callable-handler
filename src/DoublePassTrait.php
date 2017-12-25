@@ -17,7 +17,8 @@ namespace Tuupola\Middleware;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-trait DoublePassTrait {
+trait DoublePassTrait
+{
     /**
      * Execute as PSR-7 double pass middleware.
      */
@@ -29,4 +30,3 @@ trait DoublePassTrait {
         return $this->process($request, new CallableHandler($next, $response));
     }
 }
-
