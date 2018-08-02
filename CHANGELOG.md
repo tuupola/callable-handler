@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file, in reverse 
 - Support for the [approved version of PSR-15](https://github.com/php-fig/http-server-middleware).
 
 ## [0.2.0](https://github.com/tuupola/callable-handler/compare/0.1.0...0.2.0) - 2017-12-25
+### Added
+- Double pass __invoke() method as a trait.
 
 ## 0.1.0 - 2017-12-25
 
