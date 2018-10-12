@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## [1.0.0](https://github.com/tuupola/callable-handler/compare/0.4.0...1.0.0) - 2018-10-12
+- This is only to create a stable release.
+
 ## [0.4.0](https://github.com/tuupola/callable-handler/compare/0.3.0...0.4.0) - 2018-08-02
 ### Changed
 - PHP 7.1 is now minimal requirement.
