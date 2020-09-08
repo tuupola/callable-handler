@@ -6,16 +6,22 @@ php:
     - 7.2
     - 7.3
     - 7.4
-    - nightly
+
+env:
+    global:
+        - COMPOSER_ARGS="--no-interaction"
 
 matrix:
     fast_finish: true
+    include:
+    - php: nightly
+      env: COMPOSER_ARGS="--no-interaction --ignore-platform-reqs"
     allow_failures:
         - php: nightly
 
 before_script:
     - travis_retry composer self-update
-    - travis_retry composer install --no-interaction
+    - travis_retry composer install $COMPOSER_ARGS
 
 script:
     - make travis
