@@ -26,8 +26,6 @@ watch:
 
 test: lint unit
 
-travis: lint unit
-
 all: deps test
 
 .PHONY: help deps lint test watch all
