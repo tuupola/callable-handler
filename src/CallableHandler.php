@@ -26,7 +26,7 @@ SOFTWARE.
 
 /**
  * @see       https://github.com/tuupola/callable-handler
- * @license   http://www.opensource.org/licenses/mit-license.php
+ * @license   https://www.opensource.org/licenses/mit-license.php
  */
 
 namespace Tuupola\Middleware;
