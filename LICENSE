@@ -1,6 +1,4 @@
-<?php
-
-/*
+The MIT License (MIT)
 
 Copyright (c) 2017-2021 Mika Tuupola
 
@@ -21,33 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-*/
-
-/**
- * @see       https://github.com/tuupola/callable-handler
- * @license   https://www.opensource.org/licenses/mit-license.php
- */
-
-namespace Tuupola\Middleware;
-
-use Psr\Http\Server\RequestHandlerInterface;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
-
-final class CallableHandler implements RequestHandlerInterface
-{
-    private $callable;
-    private $response;
-
-    public function __construct(callable $callable, ResponseInterface $response)
-    {
-        $this->callable = $callable;
-        $this->response = $response;
-    }
-
-    public function handle(ServerRequestInterface $request): ResponseInterface
-    {
-        return ($this->callable)($request, $this->response);
-    }
-}
